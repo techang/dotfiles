@@ -7,19 +7,20 @@ filetype off
 " プラグインのセットアップ
 """"""""""""""""""""""""""""""
 if has('vim_starting')
-  set nocompatible               " Be iMproved
-
-  " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
-" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+
+""""""""""""""""""""""""""""""
+" My Budle here:
+""""""""""""""""""""""""""""""
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
 " Unite.vimで最近使ったファイルを表示できるようにする
