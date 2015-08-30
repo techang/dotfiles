@@ -8,49 +8,44 @@ filetype off
 """"""""""""""""""""""""""""""
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  "call neobundle#rc(expand('~/.vim/bundle/'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  """"""""""""""""""""""""""""""
+  " My Budle here:
+  """"""""""""""""""""""""""""""
+  " ファイルオープンを便利に
+  NeoBundle 'Shougo/unite.vim'
+  " Unite.vimで最近使ったファイルを表示できるようにする
+  NeoBundle 'Shougo/neomru.vim'
+  " ファイルをtree表示してくれる
+  NeoBundle 'scrooloose/nerdtree'
+  " Gitを便利に使う
+  NeoBundle 'tpope/vim-fugitive'
+  " Rails向けのコマンドを提供する
+  NeoBundle 'tpope/vim-rails'
+  " Ruby向けにendを自動挿入してくれる
+  NeoBundle 'tpope/vim-endwise'
+  " コメントON/OFFを手軽に実行
+  NeoBundle 'tomtom/tcomment_vim'
+  " シングルクオートとダブルクオートの入れ替え等
+  NeoBundle 'tpope/vim-surround'
+  " インデントに色を付けて見やすくする
+  NeoBundle 'nathanaelkane/vim-indent-guides'
+  " ログファイルを色づけしてくれる
+  NeoBundle 'vim-scripts/AnsiEsc.vim'
+  " 行末の半角スペースを可視化(うまく動かない？)
+  NeoBundle 'bronson/vim-trailing-whitespace'
+  " less用のsyntaxハイライト
+  NeoBundle 'KohPoll/vim-less'
+  " カラースキーマ
+  NeoBundle 'w0ng/vim-hybrid'
+  "
+  NeoBundle 'chriskempson/vim-tomorrow-theme'
+  " NERDtree
+  NeoBundle 'scrooloose/nerdtree'
+  call neobundle#end()
 endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-
-""""""""""""""""""""""""""""""
-" My Budle here:
-""""""""""""""""""""""""""""""
-" ファイルオープンを便利に
-NeoBundle 'Shougo/unite.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
-NeoBundle 'Shougo/neomru.vim'
-" ファイルをtree表示してくれる
-NeoBundle 'scrooloose/nerdtree'
-" Gitを便利に使う
-NeoBundle 'tpope/vim-fugitive'
-" Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
-" Ruby向けにendを自動挿入してくれる
-NeoBundle 'tpope/vim-endwise'
-" コメントON/OFFを手軽に実行
-NeoBundle 'tomtom/tcomment_vim'
-" シングルクオートとダブルクオートの入れ替え等
-NeoBundle 'tpope/vim-surround'
-" インデントに色を付けて見やすくする
-NeoBundle 'nathanaelkane/vim-indent-guides'
-" ログファイルを色づけしてくれる
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-" 行末の半角スペースを可視化(うまく動かない？)
-NeoBundle 'bronson/vim-trailing-whitespace'
-" less用のsyntaxハイライト
-NeoBundle 'KohPoll/vim-less'
-" カラースキーマ
-NeoBundle 'w0ng/vim-hybrid'
-"
-NeoBundle 'chriskempson/vim-tomorrow-theme'
-" NERDtree
-NeoBundle 'scrooloose/nerdtree'
 
 " Required:
 filetype plugin indent on
@@ -58,7 +53,6 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
-""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
@@ -112,9 +106,9 @@ set autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent
 " タブ文字の表示幅
-set tabstop=2
+set tabstop=4
 " Vimが挿入するインデントの幅
-set shiftwidth=2
+set shiftwidth=4
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
@@ -135,7 +129,7 @@ highlight LineNr ctermfg=darkyellow
 " vim-indent-guides
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd   ctermbg=236
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=240
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven  ctermbg=238
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_auto_colors=0
 let g:indent_guides_guide_size=1
@@ -145,7 +139,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
 """"""""""""""""""""""""""""""
-" Unit.vimの設定
+" Unite.vimの設定
 """"""""""""""""""""""""""""""
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
@@ -245,4 +239,3 @@ imap ( ()<LEFT>
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
 filetype on
 
-call neobundle#end()
