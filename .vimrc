@@ -29,17 +29,14 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 " Gitを便利に使う
 NeoBundle 'tpope/vim-fugitive'
-
 " Rails向けのコマンドを提供する
 NeoBundle 'tpope/vim-rails'
 " Ruby向けにendを自動挿入してくれる
 NeoBundle 'tpope/vim-endwise'
-
 " コメントON/OFFを手軽に実行
 NeoBundle 'tomtom/tcomment_vim'
 " シングルクオートとダブルクオートの入れ替え等
 NeoBundle 'tpope/vim-surround'
-
 " インデントに色を付けて見やすくする
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " ログファイルを色づけしてくれる
@@ -50,13 +47,10 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'KohPoll/vim-less'
 " カラースキーマ
 NeoBundle 'w0ng/vim-hybrid'
+"
 NeoBundle 'chriskempson/vim-tomorrow-theme'
-" uupaaさんからおそわったNERDtree
+" NERDtree
 NeoBundle 'scrooloose/nerdtree'
-
-" 余談: neocompleteは合わなかった。ctrl+pで補完するのが便利
-
-call neobundle#end()
 
 " Required:
 filetype plugin indent on
@@ -250,3 +244,5 @@ imap ( ()<LEFT>
 
 " filetypeの自動検出(最後の方に書いた方がいいらしい)
 filetype on
+
+call neobundle#end()

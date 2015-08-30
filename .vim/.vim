@@ -1,1 +1,0 @@
-/Users/sugita.tetsuo/dotfiles/.vim
